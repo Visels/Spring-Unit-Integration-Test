@@ -34,9 +34,9 @@ public class ProductService {
         return product;
     }
 
-    public Page<Product> retrieveAll() {
+    public List<Product> retrieveAll() {
         Pageable pageable = PageRequest.of(1,5);
-     return productRepository.findAll(pageable);
+     return productRepository.findAll();
     }
 
     public Product getById(Long id) throws NotFoundException {

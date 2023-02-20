@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpMediaTypeException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products")
 public class ProductResource {
@@ -31,7 +33,7 @@ public class ProductResource {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public Page<Product> retrieveAllProducts(){
+    public List<Product> retrieveAllProducts(){
         return productService.retrieveAll();
 
     }
